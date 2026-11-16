@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Farhaad Shakil - CS 310 Project 4 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Farhaad Shakil - Multiplayer Tic-Tac-Toe</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Multiplayer Tic-Tac-Toe</h1>
+        <p class="subtitle">Play with friends across different tabs or devices.</p>
+
+        <section id="lobby" class="panel">
+
+            <h2>Start a Game</h2>
+
+            <button id="createBtn">Create New Game</button>
+
+            <div class="join-area">
+                <input
+                    type="text"
+                    id="roomInput"
+                    placeholder="Enter room code"
+                    maxlength="5"
+                >
+
+                <button id="joinBtn">Join Game</button>
+            </div>
+
+            <p id="message"></p>
+
+        </section>
+
+        <section id="roomArea" class="panel hidden">
+
+            <div class="room-info">
+                <p>Room Code: <strong id="roomCode"></strong></p>
+                <button id="copyBtn" class="small-button">Copy Code</button>
+            </div>
+
+            <p>Your Role: <strong id="myRole"></strong></p>
+
+            <p id="status">Waiting for players...</p>
+
+            <div id="board" class="board">
+
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+
+            </div>
+
+            <div class="controls">
+                <button id="restartBtn">Restart Game</button>
+                <button id="leaveBtn" class="leave-button">Leave Game</button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="client.js"></script>
+
+</body>
+</html>
